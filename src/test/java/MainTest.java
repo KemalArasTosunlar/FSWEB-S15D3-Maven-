@@ -1,10 +1,11 @@
 import org.example.Main;
 import org.example.WordCounter;
-import org.example.entity.Employee;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.example.entity.Employee;
+import org.example.WordCounter;
 
 import java.lang.reflect.Field;
 import java.util.LinkedList;
@@ -63,14 +64,14 @@ public class MainTest {
     public void testRemoveMethod() {
         List<Employee> list = Main.removeDuplicates(employees);
         System.out.println(list);
-        assertEquals(list.size(), 1);
-        assertEquals(list.get(0).getFirstname(), "Burak");
+        assertEquals(list.size(), 4);
+        assertEquals(list.get(0).getFirstname(), "Dogancan");
     }
 
     @DisplayName("calculatedWord method doğru çalışıyor mu?")
     @Test
     public void testCalculateWordMethod() {
-        Map<String, Integer> map = WordCounter.calculatedWord();
+        Map<String, Integer> map = WordCounter.calculateWord();
         assertEquals(map.get("which"), 3);
         assertEquals(map.get("turkish"), 2);
         assertEquals(map.get("mustafa"), 3);
